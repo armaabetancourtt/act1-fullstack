@@ -1,4 +1,3 @@
-/* Limpieza CSS para quitar margenes */
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +5,14 @@
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #f2f4f3;
     color: #1a1a1a;
     line-height: 1.6;
 }
 
-/* Hero */
-.hero {
+/* HERO */
+#hero {
     min-height: 100vh;
     background:
         linear-gradient(rgba(50, 0, 240, 0.7), rgba(0, 0, 60, 0.7)),
@@ -26,11 +25,11 @@ body {
     flex-direction: column;
 }
 
-.logo {
+#logo {
     text-align: center;
 }
 
-.logo img {
+#logo img {
     width: 180px;
 }
 
@@ -54,20 +53,21 @@ body {
     background-color: rgba(255, 255, 255, 0.25);
     padding: 1.2rem;
     border-radius: 12px;
+    backdrop-filter: blur(4px);
 }
 
-/* Secciones */
+/* SECCIONES */
 section {
     padding: 4rem 2rem;
 }
 
-h2 {
+section h2 {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-/* Proyectos */
-.grid-proyectos {
+/* PROYECTOS */
+#proyectos .grid-proyectos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
@@ -77,6 +77,12 @@ h2 {
     background-color: white;
     padding: 1.2rem;
     border-radius: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proyecto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .proyecto img {
@@ -91,8 +97,12 @@ h2 {
     text-decoration: none;
 }
 
-/* Formulario */
-.formulario {
+.link-proyecto:hover {
+    text-decoration: underline;
+}
+
+/* FORMULARIO */
+#contacto .formulario {
     max-width: 800px;
     margin: auto;
     background-color: white;
@@ -115,24 +125,40 @@ textarea {
     width: 100%;
     padding: 0.6rem;
     border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #000834;
 }
 
 textarea {
-    resize: vertical;
+    height: 140px;
+    resize: none;
 }
 
+/* BOTÓN */
 button {
     width: 100%;
     padding: 0.8rem;
     background-color: #000834;
     color: white;
     border: none;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-/* Footer */
-.footer {
+button:hover {
+    background-color: #000a53;
+}
+
+/* FOOTER */
+#footer {
     background-color: black;
     color: white;
     text-align: center;
@@ -151,12 +177,16 @@ button {
     margin: 0 0.5rem;
 }
 
+.redes a:hover {
+    text-decoration: underline;
+}
+
 .copyright {
     font-size: 0.85rem;
     opacity: 0.85;
 }
 
-/* Animación */
+/* ANIMACIÓN */
 .fade {
     animation: fadeUp 1s ease;
 }
@@ -172,7 +202,7 @@ button {
     }
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 600px) {
     .hero-text h1 {
         font-size: 2.2rem;
